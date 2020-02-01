@@ -1,0 +1,4 @@
+io.mmtx.spring.cloud.feign
+io.mmtx.spring.cloud.feign.hystrix
+io.mmtx.spring.cloud.rest
+io.mmtx.spring.cloud.web

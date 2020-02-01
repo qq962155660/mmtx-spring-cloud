@@ -1,0 +1,5 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+io.mmtx.spring.cloud.rest.MmtxRestTemplateAutoConfiguration,\
+io.mmtx.spring.cloud.web.MmtxHandlerInterceptorConfiguration,\
+io.mmtx.spring.cloud.feign.MmtxFeignClientAutoConfiguration,\
+io.mmtx.spring.cloud.feign.hystrix.MmtxHystrixAutoConfiguration

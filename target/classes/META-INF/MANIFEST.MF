@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Implementation-Title: mmtx-spring-cloud 1.0.0
+Implementation-Version: 1.0.0
+Built-By: pc0062
+Implementation-Vendor-Id: io.mmtx
+Build-Jdk: 1.8.0_131
+Implementation-URL: https://spring.io/spring-cloud/spring-cloud-ggw-mm
+ tx
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Pivotal Software, Inc.
+
