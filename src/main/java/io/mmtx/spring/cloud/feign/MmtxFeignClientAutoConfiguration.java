@@ -67,8 +67,8 @@ public class MmtxFeignClientAutoConfiguration {
 
 		@Bean
 		MmtxBeanPostProcessor seataBeanPostProcessor(
-				MmtxFeignObjectWrapper seataFeignObjectWrapper) {
-			return new MmtxBeanPostProcessor(seataFeignObjectWrapper);
+				MmtxFeignObjectWrapper mmtxFeignObjectWrapper) {
+			return new MmtxBeanPostProcessor(mmtxFeignObjectWrapper);
 		}
 
 		@Bean
@@ -78,7 +78,7 @@ public class MmtxFeignClientAutoConfiguration {
 		}
 
 		@Bean
-		MmtxFeignObjectWrapper seataFeignObjectWrapper(BeanFactory beanFactory) {
+		MmtxFeignObjectWrapper mmtxFeignObjectWrapper(BeanFactory beanFactory) {
 			return new MmtxFeignObjectWrapper(beanFactory);
 		}
 

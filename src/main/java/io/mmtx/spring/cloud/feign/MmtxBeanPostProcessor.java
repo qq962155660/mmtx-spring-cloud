@@ -23,16 +23,16 @@ import org.springframework.beans.factory.config.BeanPostProcessor;
  */
 public class MmtxBeanPostProcessor implements BeanPostProcessor {
 
-	private final MmtxFeignObjectWrapper seataFeignObjectWrapper;
+	private final MmtxFeignObjectWrapper mmtxFeignObjectWrapper;
 
-	MmtxBeanPostProcessor(MmtxFeignObjectWrapper seataFeignObjectWrapper) {
-		this.seataFeignObjectWrapper = seataFeignObjectWrapper;
+	MmtxBeanPostProcessor(MmtxFeignObjectWrapper mmtxFeignObjectWrapper) {
+		this.mmtxFeignObjectWrapper = mmtxFeignObjectWrapper;
 	}
 
 	@Override
 	public Object postProcessBeforeInitialization(Object bean, String beanName)
 			throws BeansException {
-		return this.seataFeignObjectWrapper.wrap(bean);
+		return this.mmtxFeignObjectWrapper.wrap(bean);
 	}
 
 	@Override

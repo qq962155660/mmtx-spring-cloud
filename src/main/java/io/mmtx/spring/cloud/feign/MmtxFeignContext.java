@@ -29,13 +29,13 @@ import org.springframework.cloud.openfeign.FeignContext;
  */
 public class MmtxFeignContext extends FeignContext {
 
-	private final MmtxFeignObjectWrapper seataFeignObjectWrapper;
+	private final MmtxFeignObjectWrapper mmtxFeignObjectWrapper;
 
 	private final FeignContext delegate;
 
-	MmtxFeignContext(MmtxFeignObjectWrapper seataFeignObjectWrapper,
+	MmtxFeignContext(MmtxFeignObjectWrapper mmtxFeignObjectWrapper,
 			FeignContext delegate) {
-		this.seataFeignObjectWrapper = seataFeignObjectWrapper;
+		this.mmtxFeignObjectWrapper = mmtxFeignObjectWrapper;
 		this.delegate = delegate;
 	}
 
@@ -45,7 +45,7 @@ public class MmtxFeignContext extends FeignContext {
 		if (object instanceof Client) {
 			return object;
 		}
-		return (T) this.seataFeignObjectWrapper.wrap(object);
+		return (T) this.mmtxFeignObjectWrapper.wrap(object);
 	}
 
 	@Override
@@ -61,7 +61,7 @@ public class MmtxFeignContext extends FeignContext {
 			}
 			else {
 				convertedInstances.put(entry.getKey(),
-						(T) this.seataFeignObjectWrapper.wrap(entry.getValue()));
+						(T) this.mmtxFeignObjectWrapper.wrap(entry.getValue()));
 			}
 		}
 		return convertedInstances;

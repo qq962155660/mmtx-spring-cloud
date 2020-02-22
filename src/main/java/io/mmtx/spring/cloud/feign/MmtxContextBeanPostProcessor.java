@@ -29,7 +29,7 @@ public class MmtxContextBeanPostProcessor implements BeanPostProcessor {
 
 	private final BeanFactory beanFactory;
 
-	private MmtxFeignObjectWrapper seataFeignObjectWrapper;
+	private MmtxFeignObjectWrapper mmtxFeignObjectWrapper;
 
 	MmtxContextBeanPostProcessor(BeanFactory beanFactory) {
 		this.beanFactory = beanFactory;
@@ -39,7 +39,7 @@ public class MmtxContextBeanPostProcessor implements BeanPostProcessor {
 	public Object postProcessBeforeInitialization(Object bean, String beanName)
 			throws BeansException {
 		if (bean instanceof FeignContext && !(bean instanceof MmtxFeignContext)) {
-			return new MmtxFeignContext(getSeataFeignObjectWrapper(),
+			return new MmtxFeignContext(getmmtxFeignObjectWrapper(),
 					(FeignContext) bean);
 		}
 		return bean;
@@ -51,12 +51,12 @@ public class MmtxContextBeanPostProcessor implements BeanPostProcessor {
 		return bean;
 	}
 
-	private MmtxFeignObjectWrapper getSeataFeignObjectWrapper() {
-		if (this.seataFeignObjectWrapper == null) {
-			this.seataFeignObjectWrapper = this.beanFactory
+	private MmtxFeignObjectWrapper getmmtxFeignObjectWrapper() {
+		if (this.mmtxFeignObjectWrapper == null) {
+			this.mmtxFeignObjectWrapper = this.beanFactory
 					.getBean(MmtxFeignObjectWrapper.class);
 		}
-		return this.seataFeignObjectWrapper;
+		return this.mmtxFeignObjectWrapper;
 	}
 
 }
